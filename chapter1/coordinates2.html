@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coordinates</title>
+    <style>
+        body {
+            background-color: black;
+            /* overflow: hidden; */
+            /* 내용이 문서의 크기를 벗어나면 어떻게 처리할지 */
+            /* hidden을 이용하면 스크롤이 안 됨 */
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            margin: 10px;
+            background-color: beige;
+        }
+
+        .special {
+            background-color: darkgoldenrod;
+        }
+
+        /* .button__area {
+            position: fixed;
+            right: 0;
+            width: auto;
+            height: auto;
+            background-color: transparent;
+        } */
+
+        aside {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <div class="button__area">
+    <button class="scrollBy100">Scroll by 100px(y)</button>
+    <button class="scrollTo100">Scroll to 100px(y)</button>
+    <button class="scrollIntoSpecial">Scroll into special</button>
+    </div> -->
+
+    <aside>
+        <button class="scroll-by">Scroll by 100px(y)</button>
+        <button class="scroll-to">Scroll to 100px(y)</button>
+        <button class="scroll-into">Scroll into special</button>
+    </aside>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="special"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+    <script>
+
+        const special = document.querySelector('.special');
+
+        // const scrollBy100 = document.querySelector('.scrollBy100');
+        // const scrollTo100 = document.querySelector('.scrollTo100');
+        // const scrollIntoSpecial = document.querySelector('.scrollIntoSpecial');
+
+        const scrollBy = document.querySelector('.scroll-by');
+        const scrollTo = document.querySelector('.scroll-to');
+        const scrollInto = document.querySelector('.scroll-into');
+        
+        // client x,y page x,y 값 불러오기
+        special.addEventListener('click', (event) => {
+            const rect = special.getBoundingClientRect();
+            console.log(rect);
+            console.log(`client: ${event.clientX}, ${event.clientY}`);
+            console.log(`page: ${event.pageX}, ${event.pageY}`);
+        });
+
+        scrollBy.addEventListener('click', () => {
+            // 오브젝트로 전달 가능, 스무스하게 움직일 수 있음
+            window.scrollBy({top: 100, left: 0, behavior: 'smooth'});
+            
+            // window.scrollBy(0, 100);
+        });
+
+        scrollTo.addEventListener('click', () => {
+            window.scrollTo(0, 100);
+        });
+
+        scrollInto.addEventListener('click', () => {
+            window.scrollTo(73, 1574);
+        });
+
+        
+
+        // scrollBy100.addEventListener('click', (event) => {
+        //     window.scrollBy(0,100);
+        // })
+        // scrollTo100.addEventListener('click', (event) => {
+        //     window.scrollTo(0,100);
+        // })
+        // // client가 아닌 page 기준으로 y값을 맞춰야 special의 자리로 알맞게 찾아간다!
+        // scrollIntoSpecial.addEventListener('click', (event) => {
+        //     window.scrollTo(73, 1574);
+        // })
+        
+        
+
+        
+    </script>
+</body>
+</html>
