@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color:lavenderblush;
+      }
+
+      .find {
+        margin: 20px 0;
+        background-color: tomato;
+        border: none;
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+      }
+
+      .img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .carrot {
+        background: no-repeat center / contain url('./img/carrot.png');
+      }
+
+      .rabbit {
+        background: no-repeat center / contain url('./img/rabbit.png');
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <button class="find">Find a rabbit!</button>
+    <div class="img carrot"></div>
+    <div class="img carrot"></div>
+    <div class="img carrot"></div>
+    <div class="img carrot"></div>
+    <div class="img carrot"></div>
+    <div class="img carrot"></div>
+    <div class="img rabbit"></div>
+    <div class="img carrot"></div>
+    <div class="img carrot"></div>
+    <div class="img carrot"></div>
+
+    <script>
+
+      const find = document.querySelector('.find');
+      const rabbit = document.querySelector('.rabbit');
+      
+      // rabbit.addEventListener('click', (event) => {
+      //   console.log(`page: ${event.pageX}, ${event.pageY}`);
+      // })
+
+      // find.addEventListener('click', () => {
+      //   window.scrollTo(353, 1062);
+      // })
+
+      find.addEventListener('click', () => {
+        rabbit.scrollIntoView({ behavior: 'smooth' });
+      });
+
+    </script>
+  </body>
+</html>
