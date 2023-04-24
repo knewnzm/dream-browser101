@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      body {
+        background-color: black;
+        text-align: center;
+      }
+      section {
+        width: 50%;
+        margin: 50px auto;
+        background-color: brown;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      img {
+        z-index: 100;
+        will-change: opacity;
+      }
+      h1,
+      h3,
+      span {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="img/avatar.png" alt="avatar" />
+      <h1 id="brand">Dream Coding</h1>
+      <h3>Don't forget to code your dream</h3>
+    </section>
+    <span>Hello World!</span>
+
+    <script>
+      //element
+      //element를 이용할 경우 코드를 이용해
+      //삭제와 추가가 용이하고 더많은 동작을 이용할 수 있다
+      const section = document.querySelector('section');
+      const h2 = document.createElement('h2');
+      h2.setAttribute('class', 'title'); //<h2 class="title"></h2>
+      h2.textContent = 'This is a title'; //<h2 class="title">This is a title</h2>
+      const h3 = document.querySelector('h3');
+      section.insertBefore(h2, h3);
+
+      section.removeChild(h2);
+
+
+      //innerHTML
+      //좀더 간편한 작성이 가능
+      //그러나 계속해서 변경해야 한다면
+      //DOM에서 새로 추가되는 요소에 따라
+      //렌더링이 일어나 효율적이지 않다
+      section.innerHTML = `
+        <img src="img/avatar.png" alt="avatar" />
+        <h1 id="brand">Dream Coding</h1>
+        <h2>
+      `
+    </script>
+  </body>
+</html>
