@@ -10,6 +10,8 @@
 }
 
 
+
+
 /* 리스트 틀 */
 .shopping__list {
     margin: 50px auto;
@@ -28,6 +30,7 @@
 
 .list__main {
     height: 500px;
+    padding: 30px;
 }
 
 .list__footer {
@@ -54,8 +57,22 @@
     align-items: center;
 }
 
+/* 작성 칸 */
 .input {
     border: none;
     height: 25px;
+    background-color: lemonchiffon;
+    margin-right: 10px;
 }
 
+.enter {
+    padding: 8px;
+    background-color: magenta;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+/* 리스트 */
+
+
+/* 리스트 삭제 */
