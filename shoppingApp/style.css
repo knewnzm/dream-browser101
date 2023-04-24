@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Neo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: Neo;
+}
+
+
+/* 리스트 틀 */
+.shopping__list {
+    margin: 50px auto;
+    width: 450px;
+    height: 600px;
+    background-color: lemonchiffon;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.list__header {
+    color: magenta;
+    border-radius: 10px 10px 0 0;
+}
+
+.list__main {
+    height: 500px;
+}
+
+.list__footer {
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* 쇼핑 목록 추가 버튼 */
+.add-btn {
+    padding: 8px;
+    background-color: magenta;
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* 헤더, 푸터 정렬 */
+.aligned {
+    height: 50px;
+    background-color: palegreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    border: none;
+    height: 25px;
+}
+
