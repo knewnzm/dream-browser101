@@ -73,6 +73,17 @@
 }
 
 /* 리스트 */
-
+.list__main {
+    overflow: auto;
+}
 
 /* 리스트 삭제 */
+.list__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.del-btn:hover {
+   color: magenta;
+   font-weight: bolder;
+}

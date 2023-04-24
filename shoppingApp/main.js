@@ -40,9 +40,12 @@ function addToList(text) {
     newListItem.innerHTML = text;
     list.appendChild(newListItem);
 
-    // del.classList.add('del-btn');
-    // del.innerHTML = '삭제';
-    // console.log(del);
-    // list.appendChild(newListItem);
+    del.classList.add('del-btn');
+    del.innerHTML = '삭제';
+    console.log(del);
+    del.addEventListener('click', function() {
+    list.removeChild(newListItem);
+     });
+    newListItem.appendChild(del);
 }
 
