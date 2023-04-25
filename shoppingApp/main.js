@@ -25,6 +25,8 @@ add.addEventListener( 'click', () => {
         addToList(text);
         input.value = '';
         input.focus();
+
+        return add();
         
     }
     });
